@@ -1,3 +1,5 @@
+import { ReactNode } from 'react'
+
 /* *********
    slices
   ********* */
@@ -8,5 +10,9 @@ export interface UserSliceInterface {
 }
 
 /* *********
-   states
+   component
   ********* */
+
+export interface DefaultLayoutInterface {
+  children: ReactNode
+}
