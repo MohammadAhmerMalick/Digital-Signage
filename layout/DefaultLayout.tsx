@@ -1,5 +1,7 @@
 import { FC, useEffect } from 'react'
 import { useRouter } from 'next/router'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 import { updateUser } from 'store/slices/userSlice'
 import { DefaultLayoutInterface } from 'ts/interface'
@@ -20,6 +22,8 @@ const DefaultLayout: FC<DefaultLayoutInterface> = ({ children }) => {
 
   return (
     <div>
+      <ToastContainer />
+
       {user.email && (
         <button type="button" onClick={logout}>
           logout

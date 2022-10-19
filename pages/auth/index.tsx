@@ -5,6 +5,7 @@ import { signInWithEmailAndPassword } from 'firebase/auth'
 
 import { useAppDispatch } from 'store'
 import { auth } from 'config/firebaseConfig'
+import { toaster } from 'utils/utilsFunctions'
 import { updateUser } from 'store/slices/userSlice'
 
 import S from './index.module.scss'
@@ -16,14 +17,18 @@ const Auth: NextPage = () => {
   const [password, setPassword] = useState('adminadmin')
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    const toasterId = toaster.loading('Logging in')
+
     e.preventDefault()
 
     try {
       const res = await signInWithEmailAndPassword(auth, email, password)
 
       dispatch(updateUser({ email: res.user.email || '' }))
+      toaster.update(toasterId, 'successfully Logged in')
       router.push('/')
     } catch (error: any) {
+      toaster.update(toasterId, 'Unable to login', 'error')
       console.log({ code: error.code })
       console.log({ message: error.message })
     }
