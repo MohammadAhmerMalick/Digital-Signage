@@ -4,22 +4,20 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 import { UserSliceInterface } from '@/ts/interface'
 
 const initialState: UserSliceInterface = {
-  id: '',
-  role: '',
-  name: '',
+  user: {},
 }
 
 export const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    changeTheme: (
+    updateUser: (
       state: UserSliceInterface,
-      { payload }: PayloadAction<UserSliceInterface>
-    ) => ({ ...state }),
+      { payload }: PayloadAction<UserSliceInterface['user']>
+    ) => ({ ...state, user: { ...payload } }),
   },
 })
 
-export const { changeTheme } = userSlice.actions
+export const { updateUser } = userSlice.actions
 
 export const userReducer = userSlice.reducer

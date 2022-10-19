@@ -4,9 +4,7 @@ import { ReactNode } from 'react'
    slices
   ********* */
 export interface UserSliceInterface {
-  id: string
-  role: string
-  name: string
+  user: { email?: string }
 }
 
 /* *********

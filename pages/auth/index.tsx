@@ -1,12 +1,17 @@
-import { FormEvent, useState } from 'react'
 import type { NextPage } from 'next'
+import { useRouter } from 'next/router'
+import { FormEvent, useState } from 'react'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 
+import { useAppDispatch } from 'store'
 import { auth } from 'config/firebaseConfig'
+import { updateUser } from 'store/slices/userSlice'
 
 import S from './index.module.scss'
 
 const Auth: NextPage = () => {
+  const router = useRouter()
+  const dispatch = useAppDispatch()
   const [email, setEmail] = useState('admin@email.com')
   const [password, setPassword] = useState('adminadmin')
 
@@ -16,9 +21,8 @@ const Auth: NextPage = () => {
     try {
       const res = await signInWithEmailAndPassword(auth, email, password)
 
-      const user = await res.user
-
-      console.log({ user })
+      dispatch(updateUser({ email: res.user.email || '' }))
+      router.push('/')
     } catch (error: any) {
       console.log({ code: error.code })
       console.log({ message: error.message })
