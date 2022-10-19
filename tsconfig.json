@@ -4,6 +4,7 @@
     "paths": {
       "@/ts/*": ["ts/*"],
       "@/lib/*": ["lib/*"],
+      "@/styles/*": ["styles/*"],
       "@/components/*": ["components/*"]
     },
     "target": "es5",
