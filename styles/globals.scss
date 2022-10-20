@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 // @media (prefers-color-scheme: dark) {
 //   html {
 //     color-scheme: dark;
@@ -19,6 +21,13 @@
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   color: var(--TC);
+
+  // outline: 1px solid green;
+}
+
+html,
+body {
+  background-color: $bgColor;
 }
 
 a {

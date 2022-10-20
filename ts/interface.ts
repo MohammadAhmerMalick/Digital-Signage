@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { MouseEventHandler, ReactNode } from 'react'
 import { TypeOptions as toastType } from 'react-toastify'
 import { Id as toastId } from 'react-toastify/dist/types'
 
@@ -15,6 +15,11 @@ export interface UserSliceInterface {
 
 export interface DefaultLayoutInterface {
   children: ReactNode
+}
+
+export interface ButtonInterface {
+  text: string
+  onClick?: MouseEventHandler<HTMLButtonElement> | undefined
 }
 
 /* *********
