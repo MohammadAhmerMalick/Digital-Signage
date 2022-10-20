@@ -1,0 +1,15 @@
+@import '/styles//variables.scss';
+
+.button {
+  padding: 2px 10px;
+
+  border: 2px solid $bgColor;
+  border-radius: $borderRadius;
+  background-color: transparent;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: $bgColor;
+  }
+}
