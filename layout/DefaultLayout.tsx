@@ -17,7 +17,7 @@ const DefaultLayout: FC<DefaultLayoutInterface> = ({ children }) => {
   }
 
   useEffect(() => {
-    if (!user.email) router.push('/auth')
+    if (!user.email && !router.pathname.includes('auth')) router.push('/auth')
   }, [user, router])
 
   return (
