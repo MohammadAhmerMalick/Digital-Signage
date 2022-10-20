@@ -38,7 +38,7 @@ const Navbar: FC = () => {
           </Link>
         ))}
       </nav>
-      <Button text="LogOut" onClick={logout} />
+      <Button text="LogOut" onClick={logout} primary />
     </div>
   )
 }

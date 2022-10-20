@@ -23,6 +23,7 @@
   "rules": {
     "arrow-body-style": "off",
     "import/extensions": "off",
+    "react/button-has-type": "off",
     "react/react-in-jsx-scope": "off",
     "react/jsx-props-no-spreading": "off",
     "react/jsx-filename-extension": "off",

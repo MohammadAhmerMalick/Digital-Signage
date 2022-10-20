@@ -1,6 +1,7 @@
 import { MouseEventHandler, ReactNode } from 'react'
 import { TypeOptions as toastType } from 'react-toastify'
 import { Id as toastId } from 'react-toastify/dist/types'
+import { buttonTypeEnum } from './enum'
 
 /* *********
    slices
@@ -19,6 +20,9 @@ export interface DefaultLayoutInterface {
 
 export interface ButtonInterface {
   text: string
+  primary?: boolean
+  className?: string
+  type?: buttonTypeEnum
   onClick?: MouseEventHandler<HTMLButtonElement> | undefined
 }
 
