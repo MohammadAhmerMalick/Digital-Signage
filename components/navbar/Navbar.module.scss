@@ -1,0 +1,21 @@
+@import '/styles/container';
+
+.navbar {
+  @extend %container;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: white;
+
+  nav {
+    display: flex;
+    gap: 15px;
+    .link {
+      &.active {
+        font-weight: bold;
+      }
+    }
+  }
+}
