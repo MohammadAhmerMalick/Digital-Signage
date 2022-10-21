@@ -1,4 +1,4 @@
-import { MouseEventHandler, ReactNode } from 'react'
+import { MouseEventHandler, MouseEvent, ReactNode } from 'react'
 import { TypeOptions as toastType } from 'react-toastify'
 import { Id as toastId } from 'react-toastify/dist/types'
 import { buttonTypeEnum } from './enum'
@@ -26,6 +26,16 @@ export interface ButtonInterface {
   onClick?: MouseEventHandler<HTMLButtonElement> | undefined
 }
 
+export interface CustomImageInterface {
+  src: string | undefined
+  height?: number
+  width?: number
+  alt?: string
+  placeholder?: string
+  className?: string
+  onClick?(): MouseEvent<HTMLImageElement, MouseEvent> | void
+}
+
 /* *********
   Utils
  ********* */
@@ -37,4 +47,9 @@ export interface ToasterInterface {
   warn: (message: string) => void
   loading: (message: string) => toastId
   update: (id: toastId, message: string, type?: toastType) => void
+}
+
+export interface ImageNaturalDimensionInterface {
+  naturalHeight: number
+  naturalWidth: number
 }
