@@ -1,4 +1,5 @@
-@import './variables.scss';
+@import './variables';
+@import './container';
 
 // @media (prefers-color-scheme: dark) {
 //   html {
@@ -28,6 +29,10 @@
 html,
 body {
   background-color: $bgColor;
+
+  main {
+    @extend %container;
+  }
 }
 
 a {

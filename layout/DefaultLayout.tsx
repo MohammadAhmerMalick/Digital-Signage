@@ -16,13 +16,18 @@ const DefaultLayout: FC<DefaultLayoutInterface> = ({ children }) => {
   }, [user, router])
 
   return (
-    <div>
+    <>
       <ToastContainer />
 
-      {user.email && <Navbar />}
-
-      {children}
-    </div>
+      {user.email ? (
+        <>
+          <Navbar />
+          <main>{children}</main>
+        </>
+      ) : (
+        children
+      )}
+    </>
   )
 }
 
