@@ -4,8 +4,10 @@ import { FormEvent, useState } from 'react'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 
 import { useAppDispatch } from 'store'
+import { buttonTypeEnum } from 'ts/enum'
 import { auth } from 'config/firebaseConfig'
 import { toaster } from 'utils/utilsFunctions'
+import Button from 'components/buttons/Button'
 import { updateUser } from 'store/slices/userSlice'
 
 import S from './index.module.scss'
@@ -57,9 +59,12 @@ const Auth: NextPage = () => {
               onChange={({ target }) => setPassword(target.value)}
             />
           </label>
-          <button className={S.submit} type="submit">
-            Submit
-          </button>
+          <Button
+            type={buttonTypeEnum.submit}
+            text="Submit"
+            primary
+            className={S.submit}
+          />
         </form>
       </div>
     </div>
