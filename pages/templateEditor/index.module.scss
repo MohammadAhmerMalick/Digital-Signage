@@ -1,0 +1,35 @@
+@import '/styles/variables';
+
+.templateEditor {
+  display: grid;
+  grid-template-columns: 300px auto;
+
+  @media (max-width: $xs) {
+    grid-template-columns: 1fr;
+  }
+
+  .sidePanel {
+    display: grid;
+
+    padding: 10px;
+
+    input {
+      width: 100%;
+    }
+  }
+
+  .imageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: white;
+
+    width: 100%;
+    height: calc(100vh - 100px);
+    
+    @media (max-width: $xs) {
+      height: calc(100vh - 150px);
+    }
+  }
+}

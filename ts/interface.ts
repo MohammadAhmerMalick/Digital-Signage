@@ -10,6 +10,10 @@ export interface UserSliceInterface {
   user: { email?: string }
 }
 
+export interface TemplateSliceInterface {
+  selected: string
+}
+
 /* *********
    component
   ********* */
