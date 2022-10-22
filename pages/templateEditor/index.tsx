@@ -71,17 +71,19 @@ const TemplateEditor: FC = () => {
           />
         </label>
       </aside>
-      <div className={S.imageContainer}>
-        <img className={S.productImag} src="/assets/images/products/1.png" />
+      <div className={S.editorPreview}>
+        <div className={S.imageContainer}>
+          <img className={S.productImag} src="/assets/images/products/1.png" />
 
-        <TemplateSVG1
-          contact={contact || '12345678910'}
-          title={title || 'DELICIOUS'}
-          subTitle={subTitle || 'FOOD THIS WEEKEND ONLY'}
-          offer={offer || '50%'}
-          action={action || 'Order Now'}
-          link={link || 'www.website.com'}
-        />
+          <TemplateSVG1
+            contact={contact || '12345678910'}
+            title={title || 'DELICIOUS'}
+            subTitle={subTitle || 'FOOD THIS WEEKEND ONLY'}
+            offer={offer || '50%'}
+            action={action || 'Order Now'}
+            link={link || 'www.website.com'}
+          />
+        </div>
       </div>
     </div>
   )
