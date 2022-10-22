@@ -38,6 +38,7 @@ export interface CustomImageInterface {
   placeholder?: string
   className?: string
   loader?: boolean
+  layout?: 'fixed' | 'fill' | 'intrinsic' | 'responsive' | undefined
   onClick?(): MouseEvent<HTMLImageElement, MouseEvent> | void
 }
 

@@ -13,7 +13,7 @@ const TemplateList: FC = () => {
   const dispatch = useAppDispatch()
 
   const handleSelectTemplate = (index: number) => {
-    dispatch(updatetemplate(`/assets/images/${index + 1}.png`))
+    dispatch(updatetemplate(`/assets/images/${index + 1}.svg`))
     router.push('/templateEditor')
   }
 
