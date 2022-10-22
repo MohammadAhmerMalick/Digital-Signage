@@ -26,9 +26,8 @@ const TemplateList: FC = () => {
             <div className={S.imageContainer} key={uuid()}>
               <CustomImage
                 className={S.image}
+                loader
                 src={`/assets/images/${index + 1}.png`}
-                width={500}
-                height={500}
                 onClick={() => handleSelectTemplate(index)}
               />
             </div>
