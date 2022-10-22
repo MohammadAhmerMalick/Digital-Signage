@@ -31,6 +31,12 @@ const TemplateList: FC = () => {
               />
             </div>
           ))}
+        <CustomImage className={S.image} src="/assets/images/1.png" />
+        <CustomImage className={S.image} src="/assets/images/1.png" />
+        assets/
+        <CustomImage className={S.image} src="/assets/1.png" />
+        /
+        <CustomImage className={S.image} src="/1.png" />
       </div>
     </div>
   )

@@ -27,7 +27,7 @@
 
     width: 100%;
     height: calc(100vh - 100px);
-    
+
     @media (max-width: $xs) {
       height: calc(100vh - 150px);
     }
