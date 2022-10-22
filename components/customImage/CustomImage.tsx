@@ -1,12 +1,12 @@
 import Image from 'next/image'
 import React, { FC, useState } from 'react'
+
 import {
   CustomImageInterface,
   ImageNaturalDimensionInterface,
 } from 'ts/interface'
 
-// const IMAGE_PLACEHOLDER = '/assets/images/1.png'
-const IMAGE_PLACEHOLDER = ''
+const IMAGE_PLACEHOLDER = '/assets/imagePlaceholder.svg'
 
 const CustomImage: FC<CustomImageInterface> = ({
   src,
@@ -15,6 +15,7 @@ const CustomImage: FC<CustomImageInterface> = ({
   alt,
   placeholder,
   className,
+  loader,
   onClick,
 }) => {
   const [imageSrc, setImageSrc] = useState(src || IMAGE_PLACEHOLDER)
@@ -26,11 +27,14 @@ const CustomImage: FC<CustomImageInterface> = ({
   const handleSetDimension = (
     naturalDimension: ImageNaturalDimensionInterface
   ) => {
-    console.log({ naturalDimension })
     setDimension({
       naturalHeight: naturalDimension.naturalHeight,
       naturalWidth: naturalDimension.naturalWidth,
     })
+  }
+
+  const customLoader = () => {
+    return `${imageSrc}?w=${width || dimension.naturalWidth}`
   }
 
   return (
@@ -40,6 +44,7 @@ const CustomImage: FC<CustomImageInterface> = ({
       width={width || dimension.naturalWidth}
       alt={alt || 'Image'}
       className={className}
+      loader={loader ? customLoader : undefined}
       onError={() => setImageSrc(placeholder || IMAGE_PLACEHOLDER)}
       onLoadingComplete={handleSetDimension}
       onClick={onClick}
