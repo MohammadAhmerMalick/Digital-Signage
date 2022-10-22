@@ -3,13 +3,18 @@
 .templateEditor {
   display: grid;
   grid-template-columns: 300px auto;
+  grid-column-start: 0;
 
   @media (max-width: $xs) {
     grid-template-columns: 1fr;
+
+    display: flex;
+    flex-direction: column-reverse;
   }
 
   .sidePanel {
-    display: grid;
+    display: flex;
+    flex-direction: column;
 
     padding: 10px;
 
@@ -17,19 +22,29 @@
       width: 100%;
     }
   }
-
-  .imageContainer {
+  .editorPreview {
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    background-color: white;
+    height: calc(100vh - 80px);
 
-    width: 100%;
-    height: calc(100vh - 100px);
-    
-    @media (max-width: $xs) {
-      height: calc(100vh - 150px);
+    @media (max-width: $md) {
+      height: auto;
+    }
+
+    .imageContainer {
+      position: relative;
+
+      width: 100%;
+      max-width: 600px;
+
+      .productImag {
+        position: absolute;
+        width: 100%;
+        top: 0;
+      }
     }
   }
 }
