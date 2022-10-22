@@ -37,6 +37,7 @@ export interface CustomImageInterface {
   alt?: string
   placeholder?: string
   className?: string
+  loader?: boolean
   onClick?(): MouseEvent<HTMLImageElement, MouseEvent> | void
 }
 
