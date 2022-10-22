@@ -16,6 +16,7 @@ const CustomImage: FC<CustomImageInterface> = ({
   placeholder,
   className,
   loader,
+  layout,
   onClick,
 }) => {
   const [imageSrc, setImageSrc] = useState(src || IMAGE_PLACEHOLDER)
@@ -48,6 +49,7 @@ const CustomImage: FC<CustomImageInterface> = ({
       onError={() => setImageSrc(placeholder || IMAGE_PLACEHOLDER)}
       onLoadingComplete={handleSetDimension}
       onClick={onClick}
+      layout={layout}
     />
   )
 }
