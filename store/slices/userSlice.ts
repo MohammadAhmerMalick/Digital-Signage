@@ -4,7 +4,8 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 import { UserSliceInterface } from '@/ts/interface'
 
 const initialState: UserSliceInterface = {
-  user: {},
+  // user: {},
+  user: { email: 'admin@email.com' },
 }
 
 export const userSlice = createSlice({

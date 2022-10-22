@@ -5,8 +5,7 @@ import {
   ImageNaturalDimensionInterface,
 } from 'ts/interface'
 
-// const IMAGE_PLACEHOLDER = '/assets/images/1.png'
-const IMAGE_PLACEHOLDER = ''
+const IMAGE_PLACEHOLDER = '/assets/imagePlaceholder.svg'
 
 const CustomImage: FC<CustomImageInterface> = ({
   src,
@@ -26,11 +25,13 @@ const CustomImage: FC<CustomImageInterface> = ({
   const handleSetDimension = (
     naturalDimension: ImageNaturalDimensionInterface
   ) => {
-    console.log({ naturalDimension })
     setDimension({
       naturalHeight: naturalDimension.naturalHeight,
       naturalWidth: naturalDimension.naturalWidth,
     })
+  }
+  const loaderProp = () => {
+    return `${imageSrc}?w=${width || dimension.naturalWidth}`
   }
 
   return (
@@ -43,6 +44,7 @@ const CustomImage: FC<CustomImageInterface> = ({
       onError={() => setImageSrc(placeholder || IMAGE_PLACEHOLDER)}
       onLoadingComplete={handleSetDimension}
       onClick={onClick}
+      loader={loaderProp}
     />
   )
 }
